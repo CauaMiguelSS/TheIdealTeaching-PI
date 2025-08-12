@@ -5,24 +5,15 @@ public class Programa : MonoBehaviour
 
     void Start()
     {
-        int n = 5;
-        ImprimirSequencia(n);
+        int numeroTeste = 5; 
+        char resultado = VerificarNumero(numeroTeste);
+        Debug.Log("Resultado: " + resultado);
     }
-
-    void ImprimirSequencia(int n)
+    char VerificarNumero(float numero)
     {
-        string resultado = "";
-
-        for (int i = 1; i <= n; i++)
-        {
-            for (int j = 1; j <= i; j++)
-            {
-                resultado += i.ToString();
-            }
-            resultado += "\n"; 
-        }
-
-        Debug.Log(resultado);
+        if (numero > 0)
+            return 'P';
+        else
+            return 'N';
     }
-
 }
