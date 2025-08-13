@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class TextoComFade : MonoBehaviour
+public class ApresentacaoDoMapa : MonoBehaviour
 {
     public TextMeshProUGUI texto;
     public float duracao = 2f; // Tempo de fade in e fade out
@@ -10,7 +10,7 @@ public class TextoComFade : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(MostrarTextoComFade("A Floresta"));
+        StartCoroutine(MostrarTextoComFade("O Bairro"));
     }
 
     IEnumerator MostrarTextoComFade(string mensagem)
