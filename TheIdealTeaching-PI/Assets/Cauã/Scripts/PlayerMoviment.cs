@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerCtrl : MonoBehaviour
+public class PlayerMoviment : MonoBehaviour
 
 {
 
