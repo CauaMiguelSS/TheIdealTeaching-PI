@@ -24,7 +24,7 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        if (dialogueBox.activeSelf && Input.GetKeyDown(KeyCode.X))
+        if (dialogueBox.activeSelf && Input.GetKeyDown(KeyCode.Space))
         {
             if (isTyping)
             {

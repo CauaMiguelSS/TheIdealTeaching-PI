@@ -5,12 +5,12 @@ using TMPro;
 public class ApresentacaoDoMapa : MonoBehaviour
 {
     public TextMeshProUGUI texto;
-    public float duracao = 2f; // Tempo de fade in e fade out
-    public float tempoVisivel = 6f; // Tempo que o texto permanece visível após o fade in
+    public float duracao = 2f; 
+    public float tempoVisivel = 6f; 
 
     void Start()
     {
-        StartCoroutine(MostrarTextoComFade("O Bairro"));
+        StartCoroutine(MostrarTextoComFade("O Campo"));
     }
 
     IEnumerator MostrarTextoComFade(string mensagem)

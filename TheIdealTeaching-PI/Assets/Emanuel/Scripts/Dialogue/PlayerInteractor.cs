@@ -8,7 +8,7 @@ public class PlayerInteractor : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Collider2D hit = Physics2D.OverlapCircle(interactionPoint.position, interactionRadius, interactableLayer);
             if (hit != null)
