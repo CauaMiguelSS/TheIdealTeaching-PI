@@ -12,6 +12,6 @@ public class DialogueTrigger : MonoBehaviour
         if (hasInteracted) return;
 
         hasInteracted = true;
-        DialogueSystem.Instance.StartDialogue(lines);
+        DialogueSystem.Instance.StartDialogue(lines, gameObject.name);
     }
 }

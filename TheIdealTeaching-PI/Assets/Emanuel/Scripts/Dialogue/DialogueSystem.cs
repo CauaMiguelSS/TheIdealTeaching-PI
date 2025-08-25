@@ -8,6 +8,7 @@ public class DialogueSystem : MonoBehaviour
 
     public GameObject dialogueBox;
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI characterNameText; // <- Novo campo para o nome do personagem
     public float typingSpeed = 0.04f;
 
     private string[] lines;
@@ -47,11 +48,14 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    public void StartDialogue(string[] dialogueLines)
+    public void StartDialogue(string[] dialogueLines, string characterName)
     {
         lines = dialogueLines;
         currentLine = 0;
         dialogueBox.SetActive(true);
+
+        characterNameText.text = characterName; // <- Atualiza o nome do personagem
+
         StartCoroutine(TypeLine(lines[currentLine]));
     }
 
