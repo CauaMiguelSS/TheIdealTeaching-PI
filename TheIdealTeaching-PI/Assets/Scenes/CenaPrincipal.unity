@@ -1675,8 +1675,8 @@ Transform:
   m_GameObject: {fileID: 75091876}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.8771923, y: 2.1469054, z: 15.97}
-  m_LocalScale: {x: 4.7435613, y: 8.227025, z: 1}
+  m_LocalPosition: {x: -3.8771923, y: 3.2863, z: 15.97}
+  m_LocalScale: {x: 4.7435613, y: 10.505911, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 597339282}
@@ -2373,8 +2373,8 @@ Transform:
   m_GameObject: {fileID: 90392003}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.2877, y: 13.768, z: 8.555672}
-  m_LocalScale: {x: 3.98443, y: 7.12094, z: 1}
+  m_LocalPosition: {x: 45.3014, y: 16.3233, z: 8.555672}
+  m_LocalScale: {x: 4.0119224, y: 12.231262, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1220338101}
@@ -3371,8 +3371,8 @@ Transform:
   m_GameObject: {fileID: 121437851}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.94194, y: 1.0631849, z: 15.97}
-  m_LocalScale: {x: 12.760945, y: 6.003612, z: 1}
+  m_LocalPosition: {x: 7.94194, y: 2.7375, z: 15.97}
+  m_LocalScale: {x: 12.760945, y: 9.3524275, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 597339282}
@@ -5058,7 +5058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 178907147}
   m_Layer: 0
-  m_Name: Puzzle3
+  m_Name: Puzzle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7759,7 +7759,7 @@ GameObject:
   - component: {fileID: 369162258}
   - component: {fileID: 369162257}
   m_Layer: 6
-  m_Name: Caixa 2
+  m_Name: CaixaInicio 2
   m_TagString: Caixa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10745,8 +10745,8 @@ Transform:
   m_GameObject: {fileID: 516379926}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -67.46245, y: -16.135061, z: 15.97}
-  m_LocalScale: {x: 9.126093, y: 11.307034, z: 1}
+  m_LocalPosition: {x: -71.2802, y: -16.135061, z: 15.97}
+  m_LocalScale: {x: 16.761894, y: 11.307034, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 597339282}
@@ -14133,6 +14133,9 @@ Transform:
   - {fileID: 658790126}
   - {fileID: 1104155406}
   - {fileID: 2048955760}
+  - {fileID: 1999034847}
+  - {fileID: 1555611721}
+  - {fileID: 1389341916}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &608745342
@@ -18041,8 +18044,8 @@ Transform:
   m_GameObject: {fileID: 805223257}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -65.06325, y: -7.201173, z: 15.97}
-  m_LocalScale: {x: 6.513293, y: 7.1373515, z: 1}
+  m_LocalPosition: {x: -66.2752, y: -5.4024, z: 15.97}
+  m_LocalScale: {x: 8.937438, y: 10.734576, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 597339282}
@@ -26957,7 +26960,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1220338101}
   m_Layer: 0
-  m_Name: Puzzle1
+  m_Name: Puzzle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27590,7 +27593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1243422196}
   m_Layer: 0
-  m_Name: "Bot\xF5es"
+  m_Name: "Bot\xF5esInicio"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30684,8 +30687,8 @@ Transform:
   m_GameObject: {fileID: 1389341915}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 77.04, y: 34.71, z: -8.74}
-  m_LocalScale: {x: 1.6699, y: 1.4187137, z: 1}
+  m_LocalPosition: {x: -2.0509262, y: -8.293712, z: -8.74}
+  m_LocalScale: {x: 1.2923923, y: 1.2071077, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 564542615}
@@ -30711,7 +30714,7 @@ Transform:
   - {fileID: 1137590393}
   - {fileID: 914796002}
   - {fileID: 386056493}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 597339282}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1391717092
 GameObject:
@@ -33635,8 +33638,8 @@ Transform:
   m_GameObject: {fileID: 1555611720}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.178215, y: -3.2059412, z: -15.395001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -64.13453, y: -40.554356, z: -15.395001}
+  m_LocalScale: {x: 0.77393395, y: 0.8508465, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 398480947}
@@ -33657,7 +33660,7 @@ Transform:
   - {fileID: 517354107}
   - {fileID: 982810256}
   - {fileID: 1821409851}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 597339282}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557655742
 GameObject:
@@ -41966,7 +41969,7 @@ GameObject:
   - component: {fileID: 1952431952}
   - component: {fileID: 1952431951}
   m_Layer: 6
-  m_Name: Caixa
+  m_Name: CaixaInicio
   m_TagString: Caixa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43844,8 +43847,8 @@ Transform:
   m_GameObject: {fileID: 1999034846}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.56, y: -6.62, z: -15.395001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -60.467464, y: -43.459198, z: -15.395001}
+  m_LocalScale: {x: 0.77393395, y: 0.8508465, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1206873615}
@@ -43862,7 +43865,7 @@ Transform:
   - {fileID: 1417368317}
   - {fileID: 1050659325}
   - {fileID: 2014786194}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 597339282}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2001747935
 GameObject:
@@ -46796,7 +46799,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2119097994}
   m_Layer: 0
-  m_Name: Puzzle2
+  m_Name: Puzzle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47550,10 +47553,7 @@ SceneRoots:
   - {fileID: 827931253}
   - {fileID: 1759264094}
   - {fileID: 1220338101}
-  - {fileID: 1389341916}
   - {fileID: 644952946}
   - {fileID: 898023419}
-  - {fileID: 1555611721}
-  - {fileID: 1999034847}
   - {fileID: 553199782}
   - {fileID: 597339282}
