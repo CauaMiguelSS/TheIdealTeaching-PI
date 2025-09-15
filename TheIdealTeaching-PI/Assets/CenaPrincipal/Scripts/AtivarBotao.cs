@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class AtivarBotao : MonoBehaviour
@@ -6,17 +7,19 @@ public class AtivarBotao : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Caixa"))
+        if (collision.CompareTag("Caixa") || collision.CompareTag("Player"))
         {
             estaPressionado = true;
+            Debug.Log("Botão Ativado");
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Caixa"))
+        if (collision.CompareTag("Caixa") || collision.CompareTag("Player"))
         {
             estaPressionado = false;
+            Debug.Log("Botão Inativo");
         }
     }
 }

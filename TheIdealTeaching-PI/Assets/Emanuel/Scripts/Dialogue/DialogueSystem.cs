@@ -1,26 +1,39 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class DialogueSystem : MonoBehaviour
 {
     public static DialogueSystem Instance;
 
-    public GameObject dialogueBox;
-    public TextMeshProUGUI dialogueText;
-    public TextMeshProUGUI characterNameText; // <- Novo campo para o nome do personagem
-    public float typingSpeed = 0.04f;
+    [Header("UI")]
+    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI characterNameText;
+    [SerializeField] private float typingSpeed = 0.04f;
 
     private string[] lines;
     private int currentLine;
     private bool isTyping;
+
+    // Configuração da troca de cena (setada pelo NPC que chama)
+    private bool trocaCenaNoFim = false;
+    private string nomeCena = "";
 
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
-        dialogueBox.SetActive(false);
+        if (dialogueBox == null || dialogueText == null || characterNameText == null)
+        {
+            Debug.LogError("DialogueSystem: arraste todos os campos do Inspector!");
+        }
+        else
+        {
+            dialogueBox.SetActive(false);
+        }
     }
 
     void Update()
@@ -43,18 +56,30 @@ public class DialogueSystem : MonoBehaviour
                 else
                 {
                     dialogueBox.SetActive(false);
+                    OnDialogueEnd();
                 }
             }
         }
     }
 
+    // Diálogo simples (sem troca de cena)
     public void StartDialogue(string[] dialogueLines, string characterName)
+    {
+        StartDialogue(dialogueLines, characterName, false, "");
+    }
+
+    // Diálogo com troca de cena
+    public void StartDialogue(string[] dialogueLines, string characterName, bool trocaCena, string cena)
     {
         lines = dialogueLines;
         currentLine = 0;
         dialogueBox.SetActive(true);
 
-        characterNameText.text = characterName; // <- Atualiza o nome do personagem
+        characterNameText.text = characterName;
+
+        // Configuração de troca de cena
+        trocaCenaNoFim = trocaCena;
+        nomeCena = cena;
 
         StartCoroutine(TypeLine(lines[currentLine]));
     }
@@ -72,4 +97,16 @@ public class DialogueSystem : MonoBehaviour
 
         isTyping = false;
     }
+
+    private void OnDialogueEnd()
+    {
+        if (trocaCenaNoFim && !string.IsNullOrEmpty(nomeCena))
+        {
+            SceneManager.LoadScene(nomeCena);
+        }
+    }
 }
+
+
+
+

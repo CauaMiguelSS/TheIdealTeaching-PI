@@ -19,7 +19,7 @@ public class ResetCaixas : MonoBehaviour
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Caixa"))
+        if (collision.CompareTag("Caixa") || collision.CompareTag("Player"))
         {
             ResetarCaixas();
         }

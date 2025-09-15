@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TelaDeTitulo.unity
-    guid: 0e682645d038992469e5e611108c7b75
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 4ac5edad0b84e534e89a2f93d7e25e04
   - enabled: 1
     path: Assets/Scenes/CenaPrincipal.unity
     guid: 2d0f756188f29fc4cb35f89c25e9511c
