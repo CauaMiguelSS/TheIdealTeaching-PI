@@ -10,7 +10,7 @@ public class TextoComFade : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(MostrarTextoComFade("A Floresta"));
+        StartCoroutine(MostrarTextoComFade("Paulo freire house"));
     }
 
     IEnumerator MostrarTextoComFade(string mensagem)
