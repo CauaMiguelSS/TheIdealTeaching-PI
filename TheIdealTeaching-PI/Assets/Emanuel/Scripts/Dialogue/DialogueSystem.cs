@@ -59,7 +59,6 @@ public class DialogueSystem : MonoBehaviour
                 else
                 {
                     dialogueBox.SetActive(false);
-                    OnDialogueEnd();
                 }
             }
         }
@@ -101,17 +100,7 @@ public class DialogueSystem : MonoBehaviour
         isTyping = false;
     }
 
-    private void OnDialogueEnd()
-    {
-        // Chama o callback se existir
-        onDialogueFinished?.Invoke();
 
-        // E se for pra trocar de cena, troca
-        if (trocaCenaNoFim && !string.IsNullOrEmpty(nomeCena))
-        {
-            SceneManager.LoadScene(nomeCena);
-        }
-    }
 }
 
 
