@@ -14,7 +14,7 @@ public class DialogueTrigger : MonoBehaviour
 
         hasInteracted = true;
 
-        // Chama o diálogo e passa o callback pra abrir a porta no fim
+        
         DialogueSystem.Instance.StartDialogue(lines, gameObject.name, false, "", OnDialogueFinished);
     }
 
@@ -22,9 +22,14 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (porta != null)
         {
-            porta.SetActive(false); // Porta "abre" (desaparece)
-            Debug.Log("Porta aberta após o diálogo!");
+            Debug.Log("Tentando destruir a porta...");
+            Destroy(porta);
+        }
+        else
+        {
+            Debug.LogWarning("Nenhuma porta atribuída ao DialogueTrigger!");
         }
     }
 }
+
 
