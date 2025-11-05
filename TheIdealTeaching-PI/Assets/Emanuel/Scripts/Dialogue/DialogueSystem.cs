@@ -17,11 +17,8 @@ public class DialogueSystem : MonoBehaviour
     private int currentLine;
     private bool isTyping;
 
-    // Configuração da troca de cena (setada pelo NPC que chama)
     private bool trocaCenaNoFim = false;
     private string nomeCena = "";
-
-    // 🔥 Novo: callback que será chamado no final do diálogo
     private System.Action onDialogueFinished;
 
     void Awake()
@@ -59,19 +56,20 @@ public class DialogueSystem : MonoBehaviour
                 else
                 {
                     dialogueBox.SetActive(false);
+                    OnDialogueEnd();
                 }
             }
         }
     }
 
-    // Diálogo simples
+    
     public void StartDialogue(string[] dialogueLines, string characterName)
     {
         StartDialogue(dialogueLines, characterName, false, "", null);
     }
 
-    // Diálogo com troca de cena OU callback
-    public void StartDialogue(string[] dialogueLines, string characterName, bool trocaCena = false, string cena = "", System.Action onFinish = null)
+    
+    public void StartDialogue(string[] dialogueLines, string characterName, bool trocaCena, string cena, System.Action onFinish)
     {
         lines = dialogueLines;
         currentLine = 0;
@@ -79,9 +77,10 @@ public class DialogueSystem : MonoBehaviour
 
         characterNameText.text = characterName;
 
+        
         trocaCenaNoFim = trocaCena;
         nomeCena = cena;
-        onDialogueFinished = onFinish; // salva o callback
+        onDialogueFinished = onFinish; 
 
         StartCoroutine(TypeLine(lines[currentLine]));
     }
@@ -100,7 +99,15 @@ public class DialogueSystem : MonoBehaviour
         isTyping = false;
     }
 
+    private void OnDialogueEnd()
+    {
+        onDialogueFinished?.Invoke();
 
+        if (trocaCenaNoFim && !string.IsNullOrEmpty(nomeCena))
+        {
+            SceneManager.LoadScene(nomeCena);
+        }
+    }
 }
 
 

@@ -21,7 +21,6 @@ public class DialogueWithChangeScene : MonoBehaviour
         if (distancia <= distanciaInteracao && Input.GetKeyDown(KeyCode.Space))
         {
             hasInteracted = true;
-            DialogueSystem.Instance.StartDialogue(lines, gameObject.name, true, cenaParaTrocar);
         }
     }
 }
