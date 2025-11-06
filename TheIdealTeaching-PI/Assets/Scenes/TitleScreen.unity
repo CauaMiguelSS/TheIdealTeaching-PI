@@ -399,6 +399,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &357671773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1895308094161705403, guid: 2e79619a689d989439efda3bfaf176d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 546757612323609244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &650676225
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,6 +516,20 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 546757612323609244}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &731659507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357671773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846c841cc85880e4c80ce05978eac39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotaoCenaOuSair
+  sairDoJogo: 1
+  nomeCenaDestino: 
 --- !u!1 &736363431
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +544,7 @@ GameObject:
   - component: {fileID: 736363434}
   - component: {fileID: 736363433}
   - component: {fileID: 736363437}
+  - component: {fileID: 736363438}
   m_Layer: 5
   m_Name: Creditos
   m_TagString: Untagged
@@ -646,7 +667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5869603070019559063, guid: d2516a9c98d43a941bf7e7e3134d7fd4,
+  m_Sprite: {fileID: 4873901961187786013, guid: 98a5482851294094f95b9eee938f4813,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -680,6 +701,20 @@ MonoBehaviour:
   botaoTransform: {fileID: 0}
   tempoAnimacao: 0.1
   escalaEsticada: {x: 0.8, y: 0.5, z: 1}
+--- !u!114 &736363438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736363431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846c841cc85880e4c80ce05978eac39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotaoTrocaCena
+  sairDoJogo: 0
+  nomeCenaDestino: Creditos
 --- !u!1 &901468162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,10 +1168,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8413301690189449315, guid: 2e79619a689d989439efda3bfaf176d8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 731659507}
+    - target: {fileID: 8413301690189449315, guid: 2e79619a689d989439efda3bfaf176d8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExecutarAcao
+      objectReference: {fileID: 0}
+    - target: {fileID: 8413301690189449315, guid: 2e79619a689d989439efda3bfaf176d8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BotaoTrocaCena, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1895308094161705403, guid: 2e79619a689d989439efda3bfaf176d8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 731659507}
   m_SourcePrefab: {fileID: 100100000, guid: 2e79619a689d989439efda3bfaf176d8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
