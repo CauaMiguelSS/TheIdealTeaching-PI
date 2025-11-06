@@ -22,12 +22,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (porta != null)
         {
-            Debug.Log("Tentando destruir a porta...");
             Destroy(porta);
-        }
-        else
-        {
-            Debug.LogWarning("Nenhuma porta atribuída ao DialogueTrigger!");
         }
     }
 }
