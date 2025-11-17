@@ -20,6 +20,10 @@ public class DialogueSystem : MonoBehaviour
     private bool trocaCenaNoFim = false;
     private string nomeCena = "";
     private System.Action onDialogueFinished;
+    public bool DialogueAtivo()
+    {
+        return dialogueBox.activeSelf;
+    }
 
     void Awake()
     {
