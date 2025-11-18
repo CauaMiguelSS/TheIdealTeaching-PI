@@ -3,8 +3,6 @@ using UnityEngine;
 public class PlayerCTRL : MonoBehaviour
 {
     public float movSpeed;
-    public bool canMove = true; // ADICIONADO
-
     float speedX, speedY;
     Rigidbody2D rb;
 
@@ -15,7 +13,7 @@ public class PlayerCTRL : MonoBehaviour
 
     void Update()
     {
-        if (!canMove)
+        if (DialogueSystem.Instance != null && DialogueSystem.Instance.DialogueAtivo())
         {
             rb.linearVelocity = Vector2.zero;
             return;
@@ -23,6 +21,7 @@ public class PlayerCTRL : MonoBehaviour
 
         speedX = Input.GetAxisRaw("Horizontal") * movSpeed;
         speedY = Input.GetAxisRaw("Vertical") * movSpeed;
+
         rb.linearVelocity = new Vector2(speedX, speedY);
     }
 }

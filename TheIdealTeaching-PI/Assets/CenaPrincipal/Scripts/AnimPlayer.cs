@@ -1,6 +1,4 @@
-using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Jobs;
 
 public class AnimPlayer : MonoBehaviour
 {
@@ -9,12 +7,27 @@ public class AnimPlayer : MonoBehaviour
 
     void Update()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
+        
+        if (DialogueSystem.Instance != null && DialogueSystem.Instance.DialogueAtivo())
+        {
+            anim.SetFloat("Horizontal", 0f);
+            anim.SetFloat("Vertical", 0f);
+            anim.SetFloat("Speed", 0f);
+            return; 
+        }
+
+        
+        Vector3 movement = new Vector3(
+            Input.GetAxisRaw("Horizontal"),
+            Input.GetAxisRaw("Vertical"),
+            0f
+        );
+
         anim.SetFloat("Horizontal", movement.x);
         anim.SetFloat("Vertical", movement.y);
         anim.SetFloat("Speed", movement.magnitude);
 
-        transform.position = transform.position + movement * speed * Time.deltaTime;
-
+        transform.position += movement * speed * Time.deltaTime;
     }
 }
+
