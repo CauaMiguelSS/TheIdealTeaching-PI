@@ -61,12 +61,6 @@ public class CobrandoDinheiro : MonoBehaviour
 
             if (moedaHUD != null)
                 moedaHUD.SetActive(false);
-
-            Debug.Log("Valetão: Pagou, agora passa aí, campeão!");
-        }
-        else
-        {
-            Debug.Log("Valetão: Tá sem grana? Volta quando puder pagar...");
         }
     }
 }
