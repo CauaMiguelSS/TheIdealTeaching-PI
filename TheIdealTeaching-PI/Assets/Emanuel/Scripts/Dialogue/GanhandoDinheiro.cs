@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GanhandoDinheiro : MonoBehaviour
 {
@@ -7,6 +7,8 @@ public class GanhandoDinheiro : MonoBehaviour
 
     [SerializeField] private string playerTag = "Player";
     [SerializeField] private int quantia = 20;
+
+    [SerializeField] private GameObject moedaHUD; // ← ADICIONA ISSO
 
     private bool playerEncostando = false;
     private bool jaInteragiu = false;
@@ -42,6 +44,9 @@ public class GanhandoDinheiro : MonoBehaviour
     private void OnDialogueFinished()
     {
         DinheiroManager.Instance.Ganhar(quantia);
+
+        if (moedaHUD != null)
+            moedaHUD.SetActive(true);
     }
 }
 

@@ -20,7 +20,6 @@ public class ApresentacaoDoMapa : MonoBehaviour
 
         Color cor = texto.color;
 
-        // Fade in
         for (float t = 0; t < duracao; t += Time.deltaTime)
         {
             cor.a = Mathf.Lerp(0, 1, t / duracao);
@@ -32,7 +31,6 @@ public class ApresentacaoDoMapa : MonoBehaviour
 
         yield return new WaitForSeconds(tempoVisivel);
 
-        // Fade out
         for (float t = 0; t < duracao; t += Time.deltaTime)
         {
             cor.a = Mathf.Lerp(1, 0, t / duracao);
