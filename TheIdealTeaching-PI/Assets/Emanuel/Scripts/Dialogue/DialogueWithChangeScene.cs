@@ -1,25 +1,43 @@
 using UnityEngine;
+using TMPro; // caso você use TextMeshPro
 
 public class DialogueDestroyObject : MonoBehaviour
 {
     [TextArea(2, 5)]
     public string[] lines;
 
-    [SerializeField] private GameObject objetoParaDestruir; // Porta, muro, etc.
-    [SerializeField] private string playerTag = "Player";   // Tag do jogador
+    [Header("Sistema de Mensagem da Escola")]
+    [SerializeField] private GameObject painelMensagemEscola; // painel UI que será ativado
+    [SerializeField] private TextMeshProUGUI textoMensagemEscola; // texto dentro do painel
+    [TextArea(2, 5)]
+    [SerializeField] private string mensagemDaEscola; // mensagem que você quer exibir
+
+    [Header("Outros")]
+    [SerializeField] private GameObject objetoParaDestruir;
+    [SerializeField] private string playerTag = "Player";
 
     private bool playerEncostando = false;
     private bool hasInteracted = false;
 
+    void Start()
+    {
+        if (painelMensagemEscola != null)
+            painelMensagemEscola.SetActive(false); // começa escondido
+    }
+
     void Update()
     {
-        // Se o player estiver encostando e apertar espaço
         if (playerEncostando && !hasInteracted && Input.GetKeyDown(KeyCode.Space))
         {
             hasInteracted = true;
 
-            // Inicia o diálogo e destrói o objeto no final
-            DialogueSystem.Instance.StartDialogue(lines, gameObject.name, false, "", OnDialogueFinished);
+            DialogueSystem.Instance.StartDialogue(
+                lines,
+                gameObject.name,
+                false,
+                "",
+                OnDialogueFinished
+            );
         }
     }
 
@@ -28,7 +46,6 @@ public class DialogueDestroyObject : MonoBehaviour
         if (collision.collider.CompareTag(playerTag))
         {
             playerEncostando = true;
-            Debug.Log("Player encostou no NPC.");
         }
     }
 
@@ -37,15 +54,21 @@ public class DialogueDestroyObject : MonoBehaviour
         if (collision.collider.CompareTag(playerTag))
         {
             playerEncostando = false;
-            Debug.Log("Player se afastou do NPC.");
         }
     }
 
     private void OnDialogueFinished()
     {
+ 
         if (objetoParaDestruir != null)
-        {
             Destroy(objetoParaDestruir);
+ 
+        if (painelMensagemEscola != null)
+        {
+            painelMensagemEscola.SetActive(true);
+
+            if (textoMensagemEscola != null)
+                textoMensagemEscola.text = mensagemDaEscola;
         }
     }
 }
