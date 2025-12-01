@@ -9,17 +9,17 @@ public class CobrandoDinheiro : MonoBehaviour
     [SerializeField] private string playerTag = "Player";
     [SerializeField] private int preco = 10;
 
-    [SerializeField] private GameObject moedaHUD; // ← adiciona isso!
+    [SerializeField] private GameObject moedaHUD;
 
     private bool playerEncostando = false;
     private bool pagamentoFeito = false;
-    private bool jaInteragiu = false;
 
     void Update()
     {
-        if (playerEncostando && !jaInteragiu && Input.GetKeyDown(KeyCode.Space))
+        if (playerEncostando && Input.GetKeyDown(KeyCode.Space))
         {
-            jaInteragiu = true;
+            if (DialogueSystem.Instance.DialogueAtivo())
+                return;
 
             DialogueSystem.Instance.StartDialogue(
                 lines,
@@ -34,17 +34,13 @@ public class CobrandoDinheiro : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag(playerTag))
-        {
             playerEncostando = true;
-        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.collider.CompareTag(playerTag))
-        {
             playerEncostando = false;
-        }
     }
 
     private void OnDialogueFinished()
@@ -64,5 +60,8 @@ public class CobrandoDinheiro : MonoBehaviour
         }
     }
 }
+
+
+
 
 

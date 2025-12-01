@@ -11,8 +11,6 @@ public class TankChase : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Distância: " + Vector3.Distance(transform.position, player.position));
-
         if (player == null) return;
 
         tankSpeed += acceleration * Time.deltaTime;
@@ -23,8 +21,6 @@ public class TankChase : MonoBehaviour
 
         if (Vector3.Distance(transform.position, player.position) < catchDistance)
         {
-            Debug.Log("PEGOU!");
-
             SceneManager.LoadScene("CenaFinal");
         }
     }
